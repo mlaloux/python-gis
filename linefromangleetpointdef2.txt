@@ -65,7 +65,7 @@ class distance(object):
              self.v2.updateFieldMap()
              #QgsMapLayerRegistry.instance().addMapLayer(self.v2) # il faut chipoter pour arriver au résultat
 
-resultat
+resultats
 >>> p = distance(a, 20, 100)
 >>> p.trace
 >>> p.origine
