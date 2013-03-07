@@ -1,3 +1,10 @@
+''' création d'une ligne à partir d'un point, d'une direction (en degrés) et d'une distance
+line creation from a point, a direction (in degrees) and a distance
+for QGIS master with the new python API
+M. Laloux 2013'''
+
+
+
 from PyQt4.QtCore import *
 from numpy import *
 class distance(object):
@@ -41,11 +48,20 @@ class distance(object):
              QgsMapLayerRegistry.instance().addMapLayer(self.vl)
 
 resultat
->>> p = distance(a, 20, 100)
->>> p.trace
->>> p.origine
->>> p.arrive
->>> z = distance(a,95, 100)
+>>> pt = QgsGeometry.fromPoint(QgsPoint(231009.737,110767.821))
+>>> newp = distance(pt,20,100)
+>>> pt.resultat
+(231043.93901433257, 110861.79026207859)
+>>> pt.x
+231043.93901433257
+>>> pt.y
+110861.79026207859
+>>> p.final
+<qgis.core.QgsGeometry object at 0x12afd9200>
+>>> pt.trace
+>>> pt.origine
+>>> pt.arrive
+>>> z = distance(pt,95, 100)
 >>> z.trace
 >>> z.origine
 >>> z.arrive
@@ -53,40 +69,17 @@ resultat
 231109.35646980916
 >>> z.y
 110759.10542572523
->>> f = distance(a,25, 100)
->>> f.trace
->>> f.origine
->>> f.arrive
->>> l = distance(a,25, 230)
->>> l.trace
->>> l = distance(a,230,100)
->>> l.trace
->>> l.origine
->>> l.arrive
->>> l = distance(a,310,100)
->>> l.trace
->>> g = distance(a,310,100)
->>> g.trace
->>> g.origine
->>> g.arrive
->>> i = distance(a,0,100)
->>> i.trace
->>> i.origine
->>> i.arrive
->>> e = distance(a,90,100)
->>> e.trace
->>> e.origine
->>> e.arrive
-t = distance(a,180,100)
-t.trace
-t.origine
-t.arrive
-#cheminement
-a1 = distance(t.final,50,100)
-a1.trace
-a1.origine
-a1.arrive
-a2 = distance(a1.final,110,100)
-a2.trace
-a3 = distance(a2.final,210,100)
-a3.trace
+
+# cheminement 
+>>> q = distance(pt.final,80,200)
+>>> q.x
+231240.900564935
+>>> q.y
+110896.51989761197
+>>> q.trace
+>>> 
+ 
+ 
+ 
+ 
+ 
